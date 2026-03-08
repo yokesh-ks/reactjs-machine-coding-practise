@@ -1,7 +1,17 @@
-import { Card } from "../ui/card"
+import { Card, CardTitle } from "../ui/card"
 
-function ProductCard({item}) {
-    return (<Card className="p-4">{item?.title}</Card>)
+interface ProductCardProps {
+    item: {
+        title: string;
+        images: string[]
+    }
+}
+
+function ProductCard({ item }: ProductCardProps) {
+    return (<Card className="p-4">
+        <img src={item?.images?.[0]} />
+        <CardTitle>{item?.title}</CardTitle>
+    </Card>)
 }
 
 export {
