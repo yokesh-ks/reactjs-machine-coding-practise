@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import { ProductCard } from './components/card/product'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -23,15 +23,13 @@ function App() {
     )
   }
   return (
-    <>
-      <p>Vite + React</p>
-      <div className='grid grid-cols-3'>
-      {products.map((item) => (
-        <h3>{item?.title}</h3>
-      ))}
+    <div className='pt-[70px] mx-auto max-w-4xl px-4'>
+      <div className='grid grid-cols-3 gap-4'>
+        {products.map((item) => (
+          <ProductCard item={item} />
+        ))}
       </div>
-
-    </>
+    </div>
   )
 }
 
